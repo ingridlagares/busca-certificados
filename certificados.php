@@ -25,6 +25,7 @@ function consulta_certificado($name){
     echo "<div id='certificados_result'><table>";
   $folder = './wp_content/downloads/';
         if(sizeof($lista) > 0){
+            echo '<h2>Clique no seu nome para download do certificado</h2> <br/>';    
             foreach ($lista as $chave => $valor){
                 $line_number = substr($chave, 1);
                 $path = get_site_url() . '/wp-content/downloads/' . $chave . '_certificados2020.pdf';
@@ -34,7 +35,7 @@ function consulta_certificado($name){
             }
             else{
 
-                    echo "<tr><td>Nenhum resultado encontrado. Por favor entre em contato conosco: evcomp@dcc.ufmg.br</td></tr>";
+                    echo "<tr><td>Nenhum resultado encontrado para <b>".$name."</b>. <br/>Por favor entre em contato conosco: evcomp@dcc.ufmg.br</td></tr>";
             }
 
 
